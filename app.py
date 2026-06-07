@@ -1,12 +1,13 @@
 import streamlit as str
 import pdfplumber
+import os
 from google import genai
 
-# Paste your real API Key inside these quotes!
-GOOGLE_API_KEY = "AQ.Ab8RN6JzCm_3Hj6knp7nYM9tgtLnDUFqWHNctAnDsIVUSq-Szw"
+# Explicitly set the environment variable right inside the code
+os.environ["GEMINI_API_KEY"] = "PASTE_YOUR_GEMINI_API_KEY_HERE"
 
-# This initializes the client using your key directly
-client = genai.Client(api_key=GOOGLE_API_KEY)
+# Initialize without explicit parameters so it pulls directly from the environment
+client = genai.Client()
 
 str.title("🤖 AI Resume Analyzer")
 str.write("Upload your resume and paste a job description to check your match score!")
@@ -24,7 +25,7 @@ if str.button("Analyze My Resume"):
                 for page in pdf.pages:
                     resume_text += page.extract_text()
             
-            # Ask Gemini to analyze using the stable gemini-2.5-flash model
+            # Construct analysis request
             prompt = f"""
             Analyze the following resume against the job description.
             Provide a match percentage score, missing keywords, and brief suggestions.
@@ -33,6 +34,7 @@ if str.button("Analyze My Resume"):
             Resume Text: {resume_text}
             """
             
+            # Use the universally supported stable model target
             response = client.models.generate_content(
                 model='gemini-2.5-flash',
                 contents=prompt,
@@ -42,3 +44,4 @@ if str.button("Analyze My Resume"):
             str.write(response.text)
     else:
         str.warning("Please upload a resume and paste a job description.")
+             
