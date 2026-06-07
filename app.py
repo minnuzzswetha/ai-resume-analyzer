@@ -23,7 +23,7 @@ if str.button("Analyze My Resume"):
                     resume_text += page.extract_text()
             
             # Ask Gemini to analyze
-            model = genai.GenerativeModel('gemini-1.5-flash')
+            model = genai.GenerativeModel('gemini-3.5-flash')
             prompt = f"""
             Analyze the following resume against the job description.
             Provide a match percentage score, missing keywords, and brief suggestions.
