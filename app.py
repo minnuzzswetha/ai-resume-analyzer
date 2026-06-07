@@ -3,7 +3,7 @@ import pdfplumber
 import requests
 
 # Paste your real Gemini API Key inside these quotes!
-GOOGLE_API_KEY = "AQ.Ab8RN6JzCm_3Hj6knp7nYM9tgtLnDUFqWHNctAnDsIVUSq-Szw"
+GOOGLE_API_KEY = "AQ.Ab8RN6LNIr56RzJWEn12v2bxPOLSa6JBtqbUvkgE2LrusWQsBA"
 
 str.title("🤖 AI Resume Analyzer")
 str.write("Upload your resume and paste a job description to check your match score!")
