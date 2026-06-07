@@ -3,7 +3,7 @@ import pdfplumber
 import google.generativeai as genai
 
 # Configure your Gemini API Key
-GOOGLE_API_KEY = "PASTE_YOUR_GEMINI_API_KEY_HERE"
+GOOGLE_API_KEY = "AQ.Ab8RN6JzCm_3Hj6knp7nYM9tgtLnDUFqWHNctAnDsIVUSq-Szw"
 genai.configure(api_key=GOOGLE_API_KEY)
 
 str.title("🤖 AI Resume Analyzer")
