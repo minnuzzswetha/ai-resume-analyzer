@@ -4,7 +4,7 @@ import os
 from google import genai
 
 # Explicitly set the environment variable right inside the code
-os.environ["GEMINI_API_KEY"] = "PASTE_YOUR_GEMINI_API_KEY_HERE"
+os.environ["GEMINI_API_KEY"] = "AQ.Ab8RN6JzCm_3Hj6knp7nYM9tgtLnDUFqWHNctAnDsIVUSq-Szw"
 
 # Initialize without explicit parameters so it pulls directly from the environment
 client = genai.Client()
