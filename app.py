@@ -45,6 +45,4 @@ if str.button("Analyze My Resume"):
                     str.error("Failed to parse the response from the AI model.")
             else:
                 str.error(f"API Error ({response.status_code}): {response.text}")
-    else:
-        str.warning("Please upload a resume and paste a job description.")escription.")
-             
+    else:        str.warning("Please upload a resume and paste a job description.")
